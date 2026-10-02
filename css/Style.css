@@ -1,0 +1,106 @@
+@import url(NavBar.css);
+@import url(Content.css);
+@import url(Footer.css);
+
+@font-face{
+    font-family: Inter;
+    src: url('../assets/fonts/Inter-Regular.ttf') format('truetype');
+    weights: 400;
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --blue-200: hsl(224, 100%, 95%);
+  --blue-400: hsl(220, 100%, 64%);
+  --blue-600: hsl(228, 100%, 60%);
+  --blue-700: hsl(228, 99%, 58%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 4.5fr 5.5fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    max-width: 1440px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--blue-600);
+    color: var(--white);
+    font-family: Inter;
+}
+
+.nav, .footer{
+    grid-column: 1 / -1;
+     font-size: 18px;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--white);
+}
+
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr; 
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav, .footer {
+        padding: 25px 20px;
+        background-color: var(--blue-700);
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        border-top: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .stats {
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto;
+    }
+
+    .stats > div {
+        padding: 30px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 80px;
+        border-top: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .Hero {
+        padding: 30px 20px; 
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-top: 70px;
+        border-top: none;
+    }
+
+    .Hero h1 {
+        font-size: 38px;
+    }
+
+}
